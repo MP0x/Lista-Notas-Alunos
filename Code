@@ -1,0 +1,49 @@
+listaNome= []
+listaNota = []
+listaMedia = []
+
+while True:
+    nome = input('Nome: ')
+    nota1 = int(input('Nota 1: '))
+    nota2 = int(input('Nota 2: '))
+    media = (nota1 + nota2) / 2
+
+    while True:
+        listaNome.append(nome)
+        listaNota.append(nota1)
+        listaNota.append(nota2)
+        listaMedia.append(media)
+        break
+
+
+    x = input('Quer continuar? [S/N] ')
+
+    if x in 'Ss':
+        continue
+    elif x in 'Nn':
+        print('No.  NOME        MÉDIA ')
+        print('-'*30)
+
+        for u in listaNome:
+            print(listaNome.index(u), end='   ')
+            print(u, end='     ')
+            for y in listaMedia:
+                if listaNome.index(u) == listaMedia.index(y):
+                    print(y)
+        while True:
+            print('\n', '='*30)
+            p = int(input('Mostrar notas de qual aluno? (999 interrompe) '))
+            if p == 999:
+                print('Finalizando ...')
+                print ('<<<Volte Sempre>>>')
+                break
+            else:
+                if p == 0:
+                    print(f"Notas de {listaNome[0]} são {listaNota[0:2]} ")
+                elif p == 1:
+                    print(f"Notas de {listaNome[1]} são {listaNota[2:4]} ")
+                elif p == 2:
+                    print(f"Notas de {listaNome[2]} são {listaNota[4:6]} ")
+                elif p == 3:
+                    print(f"Notas de {listaNome[3]} são {listaNota[6:8]} ")
+    break
